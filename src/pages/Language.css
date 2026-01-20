@@ -1,0 +1,476 @@
+/* ========================================
+   LANGUAGE MANAGEMENT - STYLES
+   ======================================== */
+
+   .language-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* ========================================
+     PAGE HEADER
+     ======================================== */
+  
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .page-title {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF0080 0%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* ========================================
+     SEARCH BOX
+     ======================================== */
+  
+  .search-box {
+    position: relative;
+    width: 300px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 16px;
+    z-index: 1;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 14px 18px 14px 48px;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    font-size: 14px;
+    background: #FAFAFA;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #FF0080;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(255, 0, 128, 0.1);
+  }
+  
+  /* ========================================
+     BUTTONS
+     ======================================== */
+  
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #FF0080 0%, #7C3AED 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 0, 128, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 128, 0.4);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline {
+    background: white;
+    color: #212529;
+    border: 2px solid #dee2e6;
+  }
+  
+  .btn-outline:hover {
+    background: #F9FAFB;
+    border-color: #FF0080;
+    color: #FF0080;
+  }
+  
+  /* ========================================
+     TABLE SPECIFIC STYLES
+     ======================================== */
+  
+  .unique-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 13px;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  
+  .language-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .language-icon {
+    font-size: 24px;
+    color: #F57C00;
+    background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(245, 124, 0, 0.2);
+  }
+  
+  .language-name {
+    font-weight: 600;
+    color: #212529;
+    font-size: 16px;
+  }
+  
+  .total-series-count {
+    font-weight: 700;
+    color: #FF0080;
+    font-size: 18px;
+    background: linear-gradient(135deg, #FFE5F0 0%, #FFD6E8 100%);
+    padding: 8px 16px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  /* ========================================
+     ACTION BUTTONS
+     ======================================== */
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .action-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+  }
+  
+  .action-btn:hover::before {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  .action-btn:active {
+    transform: translateY(-1px);
+  }
+  
+  .edit-btn {
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+    color: #10B981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  }
+  
+  .edit-btn:hover {
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+  }
+  
+  .delete-btn {
+    background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+    color: #EF4444;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  }
+  
+  .delete-btn:hover {
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+  }
+  
+  /* ========================================
+     FORM STYLES
+     ======================================== */
+  
+  .language-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    color: #212529;
+    font-size: 14px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: white;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #FF0080;
+    box-shadow: 0 0 0 4px rgba(255, 0, 128, 0.1);
+  }
+  
+  .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #495057;
+    user-select: none;
+  }
+  
+  .form-checkbox:hover {
+    background: linear-gradient(135deg, #FFE5F0 0%, #FFD6E8 100%);
+    border-color: #FF0080;
+    color: #FF0080;
+  }
+  
+  .form-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #FF0080;
+  }
+  
+  /* ========================================
+     MODAL ACTIONS
+     ======================================== */
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 2px solid #dee2e6;
+  }
+  
+  /* ========================================
+     PAGINATION
+     ======================================== */
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .pagination span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c757d;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .pagination-btn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 2px solid #dee2e6;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #495057;
+  }
+  
+  .pagination-btn:hover:not(:disabled) {
+    border-color: #FF0080;
+    color: #FF0080;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 128, 0.2);
+  }
+  
+  .pagination-btn.active {
+    background: linear-gradient(135deg, #FF0080 0%, #7C3AED 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 0, 128, 0.4);
+  }
+  
+  .pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  .pagination-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #dee2e6;
+  }
+  
+  /* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+  
+  @media (max-width: 768px) {
+    .language-page {
+      padding: 16px;
+    }
+  
+    .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    .page-title {
+      font-size: 24px;
+    }
+  
+    .header-actions {
+      width: 100%;
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .search-box {
+      width: 100%;
+    }
+  
+    .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      font-size: 12px;
+    }
+  
+    .language-name {
+      font-size: 14px;
+    }
+  
+    .total-series-count {
+      font-size: 16px;
+      padding: 6px 12px;
+    }
+  
+    .pagination {
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px;
+    }
+  
+    .pagination-controls {
+      justify-content: center;
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  
+    .btn,
+    .btn-outline,
+    .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .page-title {
+      font-size: 20px;
+    }
+  
+    .language-icon {
+      font-size: 20px;
+      padding: 6px;
+    }
+  
+    .total-series-count {
+      font-size: 14px;
+      padding: 4px 10px;
+    }
+  }

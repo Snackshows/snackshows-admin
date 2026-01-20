@@ -1,0 +1,822 @@
+/* ================================================
+   EPISODE PAGE - COMPLETE STANDALONE CSS
+   No imports required - all styles included
+   ================================================ */
+
+   :root {
+    --primary-color: #FF0080;
+    --primary-gradient: linear-gradient(135deg, #FF0080 0%, #7C3AED 100%);
+    --secondary-gradient: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%);
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --text-light: #9CA3AF;
+    --bg-white: #FFFFFF;
+    --bg-gray: #F9FAFB;
+    --border-color: #E5E7EB;
+    --success: #10B981;
+    --danger: #EF4444;
+    --warning: #F59E0B;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* ========================================
+     PAGE CONTAINER
+     ======================================== */
+  
+  .episode-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  /* ========================================
+     PAGE HEADER
+     ======================================== */
+  
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .page-title {
+    font-size: 28px;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  
+  /* ========================================
+     BUTTONS
+     ======================================== */
+  
+  .btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 0, 128, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 128, 0.4);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .btn-outline {
+    background: white;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+  }
+  
+  .btn-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .btn-outline:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* ========================================
+     STATS OVERVIEW CARDS
+     ======================================== */
+  
+  .stats-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .stat-card-mini {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .stat-card-mini::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .stat-card-mini:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 0, 128, 0.1);
+  }
+  
+  .stat-card-mini:hover::before {
+    opacity: 1;
+  }
+  
+  .stat-card-mini .stat-value {
+    font-size: 42px;
+    font-weight: 900;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+  }
+  
+  .stat-card-mini .stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* ========================================
+     FILTERS SECTION
+     ======================================== */
+  
+  .filters-section {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .search-box {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 16px;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: var(--bg-gray);
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(255, 0, 128, 0.1);
+  }
+  
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .filter-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+  }
+  
+  .filter-btn.active {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 0, 128, 0.3);
+  }
+  
+  /* ========================================
+     EPISODE TABLE CELLS
+     ======================================== */
+  
+  .episode-number {
+    font-weight: 800;
+    font-size: 16px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .episode-title-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+  }
+  
+  .episode-thumbnail-small {
+    width: 120px;
+    height: 68px;
+    background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+    border-radius: 8px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .episode-thumbnail-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .thumbnail-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 24px;
+  }
+  
+  .episode-thumbnail-small:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .duration-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+  }
+  
+  .episode-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  
+  .episode-meta {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+  
+  /* ========================================
+     PLAN BADGE
+     ======================================== */
+  
+  .plan-badge {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+  }
+  
+  .plan-badge.free {
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+    color: #047857;
+  }
+  
+  .plan-badge.premium {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    color: #D97706;
+  }
+  
+  .plan-badge.vip {
+    background: linear-gradient(135deg, #FFE5F0 0%, #FFD6E8 100%);
+    color: #DB2777;
+  }
+  
+  /* ========================================
+     LOCK BUTTON
+     ======================================== */
+  
+  .lock-btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+    color: #9CA3AF;
+  }
+  
+  .lock-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .lock-btn.locked {
+    background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+    color: #DC2626;
+    animation: lockPulse 2s ease-in-out infinite;
+  }
+  
+  .lock-btn.unlocked {
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+    color: #059669;
+  }
+  
+  @keyframes lockPulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  /* ========================================
+     ACTION BUTTONS
+     ======================================== */
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .action-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--bg-gray);
+    color: var(--text-secondary);
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  .action-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .view-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+    color: #3B82F6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  
+  .edit-btn:hover {
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+    color: #10B981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  }
+  
+  .delete-btn:hover {
+    background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+    color: #EF4444;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  }
+  
+  /* ========================================
+     EPISODE FORM (MODAL)
+     ======================================== */
+  
+  .episode-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .form-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(255, 0, 128, 0.1);
+  }
+  
+  .input-field:disabled {
+    background: var(--bg-gray);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  .input-field::placeholder {
+    color: var(--text-light);
+  }
+  
+  textarea.input-field {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  select.input-field {
+    cursor: pointer;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .file-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--bg-gray);
+  }
+  
+  .file-input:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    background: white;
+  }
+  
+  .file-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .form-hint {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 6px;
+    font-style: italic;
+  }
+  
+  /* ========================================
+     UPLOAD PROGRESS
+     ======================================== */
+  
+  .upload-progress {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  /* ========================================
+     MODAL ACTIONS
+     ======================================== */
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+    padding-top: 24px;
+    border-top: 2px solid var(--bg-gray);
+  }
+  
+  /* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+  
+  @media (max-width: 1200px) {
+    .stats-overview {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .episode-page {
+      padding: 0;
+    }
+  
+    .page-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .page-title {
+      font-size: 24px;
+    }
+  
+    .stats-overview {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  
+    .stat-card-mini {
+      padding: 20px 16px;
+    }
+  
+    .stat-card-mini .stat-value {
+      font-size: 32px;
+    }
+  
+    .stat-card-mini .stat-label {
+      font-size: 12px;
+    }
+  
+    .filters-section {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search-box {
+      min-width: 100%;
+    }
+  
+    .filter-buttons {
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+  
+    .episode-thumbnail-small {
+      width: 80px;
+      height: 45px;
+    }
+  
+    .episode-name {
+      max-width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 13px;
+    }
+  
+    .episode-meta {
+      font-size: 11px;
+    }
+  
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  
+    .action-buttons {
+      gap: 6px;
+    }
+  
+    .action-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stats-overview {
+      grid-template-columns: 1fr;
+    }
+  
+    .lock-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+  
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .episode-page > * {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  /* ========================================
+     ACCESSIBILITY
+     ======================================== */
+  
+  .btn:focus,
+  .filter-btn:focus,
+  .action-btn:focus,
+  .lock-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+
+
+.upload-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.upload-status-badge svg {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.upload-status-badge.status-done {
+  background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+  color: #047857;
+  border: 1px solid #6EE7B7;
+}
+
+.upload-status-badge.status-pending {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  color: #D97706;
+  border: 1px solid #FCD34D;
+}
+
+.upload-status-badge.status-processing {
+  background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+  color: #1D4ED8;
+  border: 1px solid #93C5FD;
+}
+
+.upload-status-badge.status-processing svg {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.upload-status-badge.status-draft {
+  background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+  color: #6B7280;
+  border: 1px solid #D1D5DB;
+}
+
+.upload-status-badge.status-unknown {
+  background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+  color: #9CA3AF;
+  border: 1px solid #E5E7EB;
+}
+
+.upload-status-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .upload-status-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+    gap: 5px;
+  }
+
+  .upload-status-badge svg {
+    font-size: 12px;
+  }
+}
+  
+  /* ========================================
+     END OF EPISODE PAGE CSS
+     ======================================== */

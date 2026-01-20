@@ -1,0 +1,254 @@
+.users-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.search-box {
+  position: relative;
+  width: 350px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  font-size: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 18px 14px 48px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 14px;
+  background: #FAFAFA;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255, 0, 128, 0.1);
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF0080 0%, #7C3AED 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(255, 0, 128, 0.3);
+  transition: all 0.3s ease;
+}
+
+.user-cell:hover .user-avatar {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.action-btn:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  color: #F59E0B;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.edit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+}
+
+.view-btn {
+  background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+  color: #3B82F6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.view-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.history-btn {
+  background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%);
+  color: #EC4899;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+}
+
+.history-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .users-page {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  /* Make table scrollable on mobile */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+
+  /* Adjust table styling for mobile */
+  table {
+    min-width: 100%;
+    font-size: 13px;
+  }
+
+  table th,
+  table td {
+    padding: 10px 8px;
+  }
+
+  /* Make user cell more compact */
+  .user-cell {
+    gap: 8px;
+  }
+
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  /* Stack action buttons vertically on very small screens */
+  .action-buttons {
+    gap: 6px;
+  }
+
+  .action-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  /* Make search input larger for better touch targets */
+  .search-input {
+    padding: 16px 18px 16px 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 20px;
+  }
+
+  table th,
+  table td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .users-page {
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 300px;
+  }
+}
+

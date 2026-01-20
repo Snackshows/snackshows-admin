@@ -1,0 +1,11 @@
+.settings-page { max-width: 1000px; margin: 0 auto; }
+.settings-sections { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+.settings-section { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #F3F4F6; }
+.section-icon { font-size: 24px; color: var(--primary-color); }
+.section-header h3 { font-size: 20px; font-weight: 700; margin: 0; }
+.setting-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #F9FAFB; }
+.setting-row:last-child { border-bottom: none; }
+.setting-row label { font-size: 15px; font-weight: 600; color: var(--text-primary); flex: 1; }
+.setting-row .input-field { max-width: 400px; }
+.warning-box { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); color: #92400E; padding: 16px; border-radius: 12px; margin-top: 16px; font-size: 14px; font-weight: 600; }

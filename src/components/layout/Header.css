@@ -1,0 +1,374 @@
+/* ================================================
+   HEADER - COMPLETE FRESH CSS
+   Copy this ENTIRE file to your Header.css
+   ================================================ */
+
+/* ========================================
+   HEADER CONTAINER
+   ======================================== */
+
+   .header {
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* ========================================
+     HEADER LEFT SIDE
+     ======================================== */
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #495057;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-toggle:hover {
+    background: #f8f9fa;
+    color: #FF0080;
+  }
+  
+  .menu-toggle:active {
+    transform: scale(0.95);
+  }
+  
+  /* ========================================
+     HEADER RIGHT SIDE
+     ======================================== */
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  /* ========================================
+     NOTIFICATION BUTTON
+     ======================================== */
+  
+  .notification-btn {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #495057;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .notification-btn:hover {
+    background: #f8f9fa;
+    color: #FF0080;
+  }
+  
+  .notification-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: linear-gradient(135deg, #FF0080 0%, #7C3AED 100%);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(255, 0, 128, 0.3);
+  }
+  
+  /* ========================================
+     USER PROFILE - CLICKABLE SECTION
+     ======================================== */
+  
+  .user-profile {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 8px 16px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid transparent !important;
+    background: transparent !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+  
+  /* CRITICAL: Make sure children don't block clicks */
+  .user-profile * {
+    pointer-events: none !important;
+  }
+  
+  /* Hover effect */
+  .user-profile:hover {
+    background: linear-gradient(135deg, #FFE5F0 0%, #FFD6E8 100%) !important;
+    border-color: #FF0080 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 0, 128, 0.2) !important;
+  }
+  
+  /* Active (click) effect */
+  .user-profile:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 6px rgba(255, 0, 128, 0.2) !important;
+  }
+  
+  /* ========================================
+     USER AVATAR
+     ======================================== */
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FF0080;
+    box-shadow: 0 2px 8px rgba(255, 0, 128, 0.2);
+    pointer-events: none !important;
+  }
+  
+  .user-avatar-icon {
+    font-size: 40px;
+    color: #FF0080;
+    pointer-events: none !important;
+  }
+  
+  /* ========================================
+     USER NAME
+     ======================================== */
+  
+  .user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #212529;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none !important;
+  }
+  
+  .user-profile:hover .user-name {
+    color: #FF0080;
+  }
+  
+  /* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+  
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .header {
+      padding: 0 20px;
+    }
+  
+    .header-right {
+      gap: 20px;
+    }
+  
+    .user-avatar,
+    .user-avatar-icon {
+      width: 36px;
+      height: 36px;
+      font-size: 36px;
+    }
+  
+    .user-name {
+      font-size: 13px;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .header {
+      padding: 0 16px;
+      height: 60px;
+    }
+  
+    .header-right {
+      gap: 16px;
+    }
+  
+    .menu-toggle {
+      font-size: 20px;
+      padding: 6px;
+    }
+  
+    .notification-btn {
+      font-size: 20px;
+      padding: 6px;
+    }
+  
+    .notification-badge {
+      font-size: 10px;
+      min-width: 16px;
+      height: 16px;
+    }
+  
+    .user-profile {
+      padding: 6px 12px !important;
+    }
+  
+    .user-avatar,
+    .user-avatar-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 32px;
+    }
+  
+    .user-name {
+      display: none;
+    }
+  }
+  
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .header {
+      padding: 0 12px;
+    }
+  
+    .header-right {
+      gap: 12px;
+    }
+  
+    .user-profile {
+      padding: 4px 8px !important;
+    }
+  
+    .user-avatar,
+    .user-avatar-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 28px;
+    }
+  }
+  
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .header {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* ========================================
+     PRINT STYLES
+     ======================================== */
+  
+  @media print {
+    .header {
+      display: none;
+    }
+  }
+  
+  /* ========================================
+     DARK MODE SUPPORT (Optional)
+     ======================================== */
+  
+  @media (prefers-color-scheme: dark) {
+    .header {
+      background: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  
+    .menu-toggle,
+    .notification-btn {
+      color: #e0e0e0;
+    }
+  
+    .menu-toggle:hover,
+    .notification-btn:hover {
+      background: #2a2a2a;
+      color: #FF0080;
+    }
+  
+    .user-name {
+      color: #e0e0e0;
+    }
+  
+    .user-profile:hover {
+      background: linear-gradient(135deg, #2a1420 0%, #1a0f20 100%) !important;
+    }
+  }
+  
+  /* ========================================
+     ACCESSIBILITY
+     ======================================== */
+  
+  /* Focus styles for keyboard navigation */
+  .menu-toggle:focus,
+  .notification-btn:focus,
+  .user-profile:focus {
+    outline: 2px solid #FF0080;
+    outline-offset: 2px;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* ========================================
+     BROWSER COMPATIBILITY
+     ======================================== */
+  
+  /* Ensure proper rendering in older browsers */
+  .user-profile {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* ========================================
+     END OF HEADER CSS
+     ======================================== */
