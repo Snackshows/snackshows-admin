@@ -31,6 +31,8 @@ export const profileAPI = {
   
   // PATCH /dashboard/profile/change-password - Change Password
   changePassword: (data) => apiCall('/dashboard/profile/change-password', 'PATCH', data),
+
+  uploadProfilePicture: (formData) => apiCallFormData('/dashboard/profile/picture', 'PATCH', formData),
   
   // POST /dashboard/profile/picture/presign - Get Profile Picture Upload URL
   getProfilePictureUploadUrl: (data) => apiCall('/dashboard/profile/picture/presign', 'POST', data),
@@ -129,6 +131,11 @@ export const categoryAPI = {
     const queryString = params ? `?${new URLSearchParams(params)}` : '';
     return apiCall(`/dashboard/category${queryString}`, 'GET');
   },
+
+  createCategoryWithImage: (formData) => apiCallFormData('/dashboard/category/create', 'POST', formData),
+  
+  //  - Update category with FormData (includes image)
+  updateCategoryWithImage: (formData) => apiCallFormData('/dashboard/category', 'PUT', formData),
   
   // GET /dashboard/category/:id - Get Category Details
   getCategoryDetails: (categoryId) => apiCall(`/dashboard/category/${categoryId}`, 'GET'),
@@ -145,6 +152,10 @@ export const categoryAPI = {
 
 // ==================== VIDEO SERIES API ====================
 export const seriesAPI = {
+
+
+  createSeriesWithImages: (formData) => apiCallFormData('/dashboard/videoSeries', 'POST', formData),
+  updateSeriesWithImages: (formData) => apiCallFormData('/dashboard/videoSeries', 'PUT', formData),
   // Get Presigned URLs for Image Upload
   getThumbnailUploadUrl: (data) => apiCall('/dashboard/videoSeries/thumbnail/presign', 'POST', data),
   getBannerUploadUrl: (data) => apiCall('/dashboard/videoSeries/banner/presign', 'POST', data),
