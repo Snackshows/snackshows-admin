@@ -9,11 +9,11 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 import { Loading } from "./components/common/Loading";
 import Layout from "./components/layout/Layout";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 
 // Lazy load all pages for better performance
 const Login = lazy(() => import("./pages/Login"));
-const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Users = lazy(() => import("./pages/Users"));
 const FilmCategory = lazy(() => import("./pages/FilmCategory"));
 const FilmList = lazy(() => import("./pages/FilmList"));

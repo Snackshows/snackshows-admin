@@ -10,10 +10,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { dashboardAPI } from "../services/api";
-import { SkeletonStats } from "../components/common/Loading";
-import { useToast } from "../components/common/Toast";
+// import { SkeletonStats } from ".././components/common/Loading";
+// import { useToast } from "../components/common/Toast";
 import "./Dashboard.css";
+import { dashboardAPI } from "../../services/api";
+import { SkeletonStats } from "../../components/common/Loading";
+import { useToast } from "../../components/common/Toast";
 
 const Dashboard = () => {
   const toast = useToast();
