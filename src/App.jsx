@@ -14,7 +14,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 
 // Lazy load all pages for better performance
 const Login = lazy(() => import("./pages/Login"));
-const Users = lazy(() => import("./pages/Users"));
+const Users = lazy(() => import("./pages/users/Users"));
 const FilmCategory = lazy(() => import("./pages/FilmCategory"));
 const FilmList = lazy(() => import("./pages/FilmList"));
 const EpisodeList = lazy(() => import("./pages/EpisodeList"));

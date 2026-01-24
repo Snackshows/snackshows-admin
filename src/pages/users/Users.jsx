@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { FaEye, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Table from "../components/common/Table";
-import Toggle from "../components/common/Toggle";
-import { useToast } from "../components/common/Toast";
-import { useConfirm } from "../components/common/ConfirmDialog";
-import { SkeletonTable } from "../components/common/Loading";
-import { usersAPI } from "../services/api";
+import Table from "../../components/common/Table";
+import Toggle from "../../components/common/Toggle";
+import { useToast } from "../../components/common/Toast";
+import { useConfirm } from "../../components/common/ConfirmDialog";
+import { SkeletonTable } from "../../components/common/Loading";
+import { usersAPI } from "../../services/api";
 import "./Users.css";
 
 const Users = () => {
