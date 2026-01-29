@@ -104,7 +104,7 @@ const Login = () => {
           <p className="login-subtitle">
             Let's connect, chat, and spark real connections.<br />
             Enter your credentials to continue your journey on<br />
-            StoryBox.
+            SnacksShows.
           </p>
 
           {error && (
