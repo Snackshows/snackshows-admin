@@ -196,6 +196,9 @@ export const episodesAPI = {
     const queryString = params ? `?${new URLSearchParams(params)}` : '';
     return apiCall(`/dashboard/episode${queryString}`, 'GET');
   },
+    // ✅ NEW - FormData methods
+  createEpisodeWithThumbnail: (formData) => apiCallFormData('/dashboard/episode', 'POST', formData),
+  updateEpisodeWithThumbnail: (formData) => apiCallFormData('/dashboard/episode', 'PUT', formData),
   
   // GET /dashboard/episode/:id - Get Episode Details
   getEpisodeDetails: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'GET'),
@@ -241,16 +244,37 @@ export const languageAPI = {
 };
 
 
-export const episodeAPI = {
-  getAllEpisodes: () => apiCall('/dashboard/episode', 'GET'),
-  getEpisodeDetails: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'GET'),
-  createEpisode: (data) => apiCall('/dashboard/episode', 'POST', data),
-  updateEpisode: (episodeId, data) => apiCall(`/dashboard/videoSeries/${episodeId}`, 'PUT', data),
-  deleteEpisode: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'DELETE'),
-  getThumbnailPresignedUrl: (data) => apiCall('/dashboard/videoSeries/thumbnail/presign', 'POST', data),
-  getVideoPresignedUrl: (data) => apiCall('/dashboard/episode/video/presign', 'POST', data),
-};
+// export const episodeAPI = {
+//   getAllEpisodes: () => apiCall('/dashboard/episode', 'GET'),
+//   getEpisodeDetails: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'GET'),
+//   createEpisode: (data) => apiCall('/dashboard/episode', 'POST', data),
+//   updateEpisode: (episodeId, data) => apiCall(`/dashboard/videoSeries/${episodeId}`, 'PUT', data),
+//   deleteEpisode: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'DELETE'),
+//   getThumbnailPresignedUrl: (data) => apiCall('/dashboard/videoSeries/thumbnail/presign', 'POST', data),
+//   getVideoPresignedUrl: (data) => apiCall('/dashboard/episode/video/presign', 'POST', data),
+// };
 
+// ==================== EPISODES API ====================
+export const episodeAPI = {
+  getAllEpisodes: (params) => {
+    const queryString = params ? `?${new URLSearchParams(params)}` : '';
+    return apiCall(`/dashboard/episode${queryString}`, 'GET');
+  },
+  
+  getEpisodeDetails: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'GET'),
+  
+  createEpisodeWithThumbnail: (formData) => apiCallFormData('/dashboard/episode', 'POST', formData),
+  
+  updateEpisodeWithThumbnail: (formData) => apiCallFormData('/dashboard/episode', 'PUT', formData),
+  
+  deleteEpisode: (episodeId) => apiCall(`/dashboard/episode/${episodeId}`, 'DELETE'),
+  
+  getVideoPresignedUrl: (data) => apiCall('/dashboard/episode/video/presign', 'POST', data),
+  
+  createEpisode: (data) => apiCall('/dashboard/episode', 'POST', data),
+  updateEpisode: (episodeId, data) => apiCall(`/dashboard/episode/${episodeId}`, 'PUT', data),
+  getThumbnailPresignedUrl: (data) => apiCall('/dashboard/videoSeries/thumbnail/presign', 'PUT', data),
+};
 
 // ==================== SUBSCRIPTION API ====================
 export const subscriptionAPI = {
