@@ -1063,8 +1063,8 @@ const FilmList = () => {
       }
 
       // Add category IDs as individual entries (categoryId[i])
-      formData.categoryIds.forEach((categoryId, index) => {
-        seriesFormData.append(`categoryId[${index}]`, categoryId);
+      formData.categoryIds.forEach((categoryId) => {
+        seriesFormData.append(`categoryIds[]`, categoryId);
       });
 
       // Add image files if new files are selected
