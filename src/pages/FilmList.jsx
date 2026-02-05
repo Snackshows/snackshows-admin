@@ -836,8 +836,8 @@ const FilmList = () => {
           uniqueId: item.uniqueId || `#SER${item.id?.substring(0, 6) || index}`,
           name: item.name || "Untitled",
           description: item.description || "",
-          categoryIds:
-            item.categoryIds || item.categoryId ? [item.categoryId] : [],
+          categoryId:
+            item.category  || [],
           languageId: item.languageId || "",
           banner: item.banner || "",
           thumbnail: item.thumbnail || "",
@@ -1063,8 +1063,8 @@ const FilmList = () => {
       }
 
       // Add category IDs as individual entries (categoryId[i])
-      formData.categoryIds.forEach((categoryId, index) => {
-        seriesFormData.append(`categoryId[${index}]`, categoryId);
+      formData.categoryIds.forEach((categoryId) => {
+        seriesFormData.append(`categoryIds[]`, categoryId);
       });
 
       // Add image files if new files are selected
@@ -1125,6 +1125,8 @@ const FilmList = () => {
     rowNumber: (currentPage - 1) * itemsPerPage + index + 1,
   }));
 
+ 
+
   // Table Columns
   const columns = [
     {
@@ -1174,7 +1176,8 @@ const FilmList = () => {
     {
       header: "CATEGORIES",
       render: (row) => {
-        const categoryNames = getCategoryNames(row.categoryIds);
+        const categoryNames = getCategoryNames(row.category);
+        console.log("categoryNames",categoryNames);
         return (
           <div className="category-badges">
             {categoryNames.split(", ").map((name, idx) => (
