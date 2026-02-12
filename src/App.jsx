@@ -54,7 +54,7 @@ const PageLoader = () => <Loading fullScreen message="Loading page..." />;
 function AppRoutes() {
   return (
     <Router>
-      <ErrorBoundary>
+  
         <Routes>
           {/* Public Routes */}
           <Route
@@ -114,7 +114,7 @@ function AppRoutes() {
           {/* 404 Route */}
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
-      </ErrorBoundary>
+      
     </Router>
   );
 }
